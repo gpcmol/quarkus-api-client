@@ -1,6 +1,5 @@
 package nl.molnet.punk;
 
-import io.smallrye.common.annotation.RunOnVirtualThread;
 import jakarta.ws.rs.BeanParam;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;

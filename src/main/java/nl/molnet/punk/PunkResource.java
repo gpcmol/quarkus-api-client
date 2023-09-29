@@ -13,8 +13,6 @@ import java.util.List;
 @Path("/punk")
 public class PunkResource {
 
-  private Integer MAX_PAGE = 100;
-
   @Inject
   Logger log;
 
@@ -22,11 +20,10 @@ public class PunkResource {
   private PunkService punkService;
 
   @GET
-  //@RunOnVirtualThread
+  @RunOnVirtualThread
   @Path("/beers")
   public List<Beer> list(@BeanParam PageParameters pageParameters) {
-    System.out.println(Thread.currentThread());
-    log.infof("(%s) list", Thread.currentThread());
+    log.infof("fetch beer list on thread %s", Thread.currentThread());
     return punkService.list(pageParameters);
   }
 
